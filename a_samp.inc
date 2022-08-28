@@ -16,6 +16,8 @@
 // Ignores warning 217 for properly indented PAWNO code
 // It's tab size is 4 and often uses 4 spaces instead, PAWNCC's is 8
 
+#define __SAMPStdLib 0x1
+
 #include <core>
 #include <float>
 #include <string>
@@ -430,3 +432,5 @@ forward OnPlayerSelectObject(playerid, type, objectid, modelid, Float:fX, Float:
 forward OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY, Float:fZ);
 
 // --------------------------------------------------
+
+#include <a_extra>
