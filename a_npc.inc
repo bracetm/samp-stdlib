@@ -24,8 +24,12 @@
 // --------------------------------------------------
 
 // Util
+#if !defined print
 native print(const string[]);
+#endif
+#if !defined printf
 native printf(const format[], {Float,_}:...);
+#endif
 native format(output[], len, const format[], {Float,_}:...);
 native SetTimer(funcname[], interval, repeating);
 native KillTimer(timerid);
@@ -35,8 +39,8 @@ native Float:acos(Float:value);
 native Float:atan(Float:value);
 native Float:atan2(Float:x, Float:y);
 
-native SendChat(msg[]);
-native SendCommand(commandtext[]);
+native SendChat(const msg[]);
+native SendCommand(const commandtext[]);
 
 native GetPlayerState(playerid);
 native GetPlayerPos(playerid, &Float:x, &Float:y, &Float:z);

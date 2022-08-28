@@ -54,8 +54,12 @@
 // --------------------------------------------------
 
 // Util
+#if !defined print
 native print(const string[]);
+#endif
+#if !defined printf
 native printf(const format[], {Float,_}:...);
+#endif
 native format(output[], len, const format[], {Float,_}:...);
 native SendClientMessage(playerid, color, const message[]);
 native SendClientMessageToAll(color, const message[]);
@@ -65,8 +69,8 @@ native SendDeathMessage(killer, killee, weapon);
 native SendDeathMessageToPlayer(playerid, killer, killee, weapon);
 native GameTextForAll(const string[],time,style);
 native GameTextForPlayer(playerid,const string[],time,style);
-native SetTimer(funcname[], interval, repeating);
-native SetTimerEx(funcname[], interval, repeating, const format[], {Float,_}:...);
+native SetTimer(const funcname[], interval, repeating);
+native SetTimerEx(const funcname[], interval, repeating, const format[], {Float,_}:...);
 native KillTimer(timerid);
 native GetTickCount();
 native GetMaxPlayers();
@@ -135,7 +139,7 @@ native LimitGlobalChatRadius(Float:chat_radius);
 native LimitPlayerMarkerRadius(Float:marker_radius);
 
 // Npc
-native ConnectNPC(name[], script[]);
+native ConnectNPC(const name[], const script[]);
 native IsPlayerNPC(playerid);
 
 // Admin
@@ -143,7 +147,7 @@ native IsPlayerAdmin(playerid);
 native Kick(playerid);
 native Ban(playerid);
 native BanEx(playerid, const reason[]);
-native SendRconCommand(command[]);
+native SendRconCommand(const command[]);
 native GetPlayerNetworkStats(playerid, retstr[], retstr_size);
 native GetNetworkStats(retstr[], retstr_size);
 native GetPlayerVersion(playerid, const version[], len); // Returns the SA-MP client revision as reported by the player
@@ -187,7 +191,7 @@ native Menu:GetPlayerMenu(playerid);
 #define TEXT_DRAW_FONT_SPRITE_DRAW	 4
 #define TEXT_DRAW_FONT_MODEL_PREVIEW 5
 
-native Text:TextDrawCreate(Float:x, Float:y, text[]);
+native Text:TextDrawCreate(Float:x, Float:y, const text[]);
 native TextDrawDestroy(Text:text);
 native TextDrawLetterSize(Text:text, Float:x, Float:y);
 native TextDrawTextSize(Text:text, Float:x, Float:y);
@@ -223,16 +227,16 @@ native GangZoneStopFlashForPlayer(playerid, zone);
 native GangZoneStopFlashForAll(zone);
 
 // Global 3D Text Labels
-native Text3D:Create3DTextLabel(text[], color, Float:X, Float:Y, Float:Z, Float:DrawDistance, virtualworld, testLOS=0);
+native Text3D:Create3DTextLabel(const text[], color, Float:X, Float:Y, Float:Z, Float:DrawDistance, virtualworld, testLOS=0);
 native Delete3DTextLabel(Text3D:id);
 native Attach3DTextLabelToPlayer(Text3D:id, playerid, Float:OffsetX, Float:OffsetY, Float:OffsetZ);
 native Attach3DTextLabelToVehicle(Text3D:id, vehicleid, Float:OffsetX, Float:OffsetY, Float:OffsetZ);
-native Update3DTextLabelText(Text3D:id, color, text[]);
+native Update3DTextLabelText(Text3D:id, color, const text[]);
 
 // Per-player 3D Text Labels
-native PlayerText3D:CreatePlayer3DTextLabel(playerid, text[], color, Float:X, Float:Y, Float:Z, Float:DrawDistance, attachedplayer=INVALID_PLAYER_ID, attachedvehicle=INVALID_VEHICLE_ID, testLOS=0);
+native PlayerText3D:CreatePlayer3DTextLabel(playerid, const text[], color, Float:X, Float:Y, Float:Z, Float:DrawDistance, attachedplayer=INVALID_PLAYER_ID, attachedvehicle=INVALID_VEHICLE_ID, testLOS=0);
 native DeletePlayer3DTextLabel(playerid, PlayerText3D:id);
-native UpdatePlayer3DTextLabelText(playerid, PlayerText3D:id, color, text[]);
+native UpdatePlayer3DTextLabelText(playerid, PlayerText3D:id, color, const text[]);
 
 // Player GUI Dialog
 #define DIALOG_STYLE_MSGBOX				0
@@ -242,7 +246,7 @@ native UpdatePlayer3DTextLabelText(playerid, PlayerText3D:id, color, text[]);
 #define DIALOG_STYLE_TABLIST			4
 #define DIALOG_STYLE_TABLIST_HEADERS	5
 
-native ShowPlayerDialog(playerid, dialogid, style, caption[], info[], button1[], button2[]);
+native ShowPlayerDialog(playerid, dialogid, style, const caption[], const info[], const button1[], const button2[]);
 
 // --------------------------------------------------
 // Defines
