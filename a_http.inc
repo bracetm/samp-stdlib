@@ -2,6 +2,8 @@
  *
  *  (c) Copyright 2010, SA-MP Team
  *
+ *  Modified by the SA:MP API team.
+ *
  */
 
 // HTTP requests

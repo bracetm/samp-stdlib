@@ -2,6 +2,8 @@
  *
  *  (c) Copyright 2005-2015, SA-MP Team
  *
+ *  Modified by the SA:MP API team.
+ *
  */
 
 #if defined _samp_included

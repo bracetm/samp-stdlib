@@ -2,6 +2,8 @@
  *
  *  (c) Copyright 2005-2012, SA-MP Team
  *
+ *  Modified by the SA:MP API team.
+ *
  */
 
 #if defined _vehicles_included

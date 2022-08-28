@@ -1,7 +1,9 @@
-//  SA-MP Native SQLite Database Functions
-//
-//  (c) Copyright 2015, SA-MP Team
-//
+/*  SA-MP Native SQLite Database Functions
+ *
+ *  (c) Copyright 2015, SA-MP Team
+ *
+ *  Modified by the SA:MP API team.
+ */
 
 #if defined _sampdb_included
 	#endinput
